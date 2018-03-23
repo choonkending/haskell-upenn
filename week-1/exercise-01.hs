@@ -21,3 +21,8 @@ doubleEveryOther l =
     [] -> []
 
 
+sumDigits ::  [Integer] -> Integer
+-- sumDigits = foldr (\a b -> foldr (+) 0 (toDigits a) + b) 0
+-- sumDigits = foldr ((+) . (foldr (+) 0) . toDigits) 0
+sumDigits = foldr ((+) . sum . toDigits) 0
+
