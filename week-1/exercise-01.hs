@@ -26,3 +26,5 @@ sumDigits ::  [Integer] -> Integer
 -- sumDigits = foldr ((+) . (foldr (+) 0) . toDigits) 0
 sumDigits = foldr ((+) . sum . toDigits) 0
 
+validate :: Integer -> Bool
+validate = (== 0) . (flip mod 10) . sumDigits . doubleEveryOther . toDigits
