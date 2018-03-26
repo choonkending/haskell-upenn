@@ -16,3 +16,6 @@ parseMessage s
     l = words s
     h = head l
     t = tail l
+
+parse :: String -> [LogMessage]
+parse = map parseMessage . lines
