@@ -35,3 +35,8 @@ parseMessage = parseWords . words
 
 parse :: String -> [LogMessage]
 parse = map parseMessage . lines
+
+insert :: LogMessage -> MessageTree -> MessageTree
+insert (Unknown _) = id
+
+
