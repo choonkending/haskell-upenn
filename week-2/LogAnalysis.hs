@@ -50,3 +50,5 @@ insert l1@(LogMessage _ t1 _)
   | t1 < t2 = Node (insert l2 leftTree) l2 rightTree
   | otherwise = Node leftTree l2 (insert l1 rightTree)
 
+build :: [LogMessage] -> MessageTree
+build = foldr insert Leaf
